@@ -12,8 +12,29 @@ module Mail
       emails = []
       key_array = keys(params)
       Mail::Connection.run(@folder, @read_only) do |c|
-        c.search(key_array).each do |mail_id|
-          email = Email.new(@folder, mail_id)
+        c.search(key_array).each do |email_id|
+          email = Email.new(@folder, email_id)
+
+          raw_body = c.fetch(email_id, ['BODY'])[0].attr['BODY']
+          raw_envelope = c.fetch(email_id, ['ENVELOPE'])[0].attr['ENVELOPE']
+
+          email.raw_body = raw_body
+          email.raw_envelope = raw_envelope
+
+          if email.is_multipart?
+            atta_id = 1
+            atts = []
+            while email.body.parts[atta_id] != nil
+              att = Attachment.new(@folder, email_id, atta_id, email.body.parts[atta_id])
+
+              index = "BODY[#{atta_id + 1}]"
+              att.body = c.fetch(email_id, index)[0].attr[index]
+              atts << att
+              atta_id += 1
+            end
+            email.attachments = atts
+          end
+
           if email.body
             emails << email
           end
@@ -24,7 +45,7 @@ module Mail
 
 # As chaves podem ser encontradas na documentação do IMAP, seção 6.4.4
 # conforme link a seguir http://tools.ietf.org/html/rfc3501section-6.4.4
-# samples: 
+# samples:
 # ["SINCE", "29-Feb-2012", "UNSEEN"]
 # ["DELETED", "FROM", "SMITH" "SINCE" "1-Feb-1994"]
     def keys(params)
@@ -37,19 +58,21 @@ module Mail
     end
 
     private
-    def folder(f)
-      f.to_s.upcase
-    end
+      def folder(f)
+        f.to_s.upcase
+      end
   end
-   
+
   # Classe responsável por retornar um Attachment com os seguintes parâmetros
   class Attachment
-    def initialize(folder, msg_id, attachment_id, raw_attachment)
+
+    attr_accessor :body
+
+    def initialize(folder, email_id, attachment_id, raw_attachment)
       @folder = folder
-      @msg_id = msg_id
+      @email_id = email_id
       @attachment_id = attachment_id
       @raw_attachment = raw_attachment
-      @body = nil
     end
 
     def save_attachments(path='./')
@@ -59,17 +82,11 @@ module Mail
       File.write(File.join(path, name), body, mode: 'w')
     end
 
-    def body    
-      Mail::Connection.run(@folder, true) do |c|      
-        index = "BODY[#{@attachment_id + 1}]"
-        body_packed = c.fetch(@msg_id, index)[0].attr[index]
-        @body = case encoding
-                  when 'BASE64' then body_packed.unpack('m')[0]
-                  else
-                    nil
-                end unless @body
-      end
-      @body
+    def body_unpacked
+      return case encoding
+        when 'BASE64' then @body.unpack('m')[0]
+        else nil
+      end if @body
     end
 
     def media_type
@@ -84,27 +101,27 @@ module Mail
       @raw_attachment.param['NAME']
     end
 
-    def content_id    
+    def content_id
       @raw_attachment.content_id
     end
 
     def description
-      @raw_attachment.description    
+      @raw_attachment.description
     end
 
     def encoding
       @raw_attachment.encoding
     end
-    
+
     def size
       @raw_attachment.size
     end
 
-    def lines  
+    def lines
       @raw_attachment.lines
     end
 
-    def md5   
+    def md5
       @raw_attachment.md5
     end
 
@@ -112,7 +129,7 @@ module Mail
       @raw_attachment.disposition
     end
 
-    def language 
+    def language
       @raw_attachment.language
     end
 
@@ -126,11 +143,10 @@ module Mail
   end
 
   class Email
+    attr_accessor :raw_body, :raw_envelope, :email_id, :attachments
+
     def initialize(folder, email_id)
       @folder = folder
-      @email_id = email_id
-      @raw_body = get_body
-      @raw_envelope = get_envelope
     end
 
     def to_s
@@ -142,7 +158,7 @@ module Mail
     end
 
     def from
-      senders = []      
+      senders = []
       @raw_envelope.from.each do |s|
         senders << {
           :name => s.name,
@@ -172,52 +188,15 @@ module Mail
     end
 
     def body
-      get_body
       @raw_body
-    end
-
-    def attachments
-      i = 1
-      atts = []
-      while body.parts[i] != nil
-        atts << Attachment.new(@folder, @email_id, i, body.parts[i])
-        i+=1
-      end if is_multipart?
-      atts
     end
 
     def media_type
       body['media_type'] if body
     end
 
-    def is_multipart?      
-      media_type == 'MULTI_PART'
-    end
-
-    private
-
-    def get_body
-      raw_body = nil
-      begin
-        Mail::Connection.run(@folder, true) do |c|
-          raw_body = c.fetch(@email_id, ['BODY'])[0].attr['BODY']
-        end unless @raw_body
-      rescue
-        raw_body = nil
-      end
-      raw_body
-    end
-
-    def get_envelope
-      raw_envelope = nil
-      begin
-        Mail::Connection.run(@folder, true) do |c|
-          raw_envelope = c.fetch(@email_id, ['ENVELOPE'])[0].attr['ENVELOPE']
-        end unless @raw_envelope
-      rescue
-        raw_envelope = nil
-      end
-      raw_envelope
+    def is_multipart?
+      media_type == 'MULTIPART'
     end
   end
 end
