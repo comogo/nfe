@@ -1,0 +1,6 @@
+email:
+  address : "pop.domain.com"
+  port : 110
+  username : "user"
+  password : "password"
+  ssl : false

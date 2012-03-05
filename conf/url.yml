@@ -1,0 +1,7 @@
+pr:
+  producao:
+    consulta_nfe: https://nfe2.fazenda.pr.gov.br/nfe/NFeConsulta2
+    consulta_servico: https://nfe2.fazenda.pr.gov.br/nfe/NFeStatusServico2
+  homologacao:
+    consulta_nfe: https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeConsulta2
+    consulta_servico: https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeStatusServico2
