@@ -14,6 +14,7 @@ module Nfe
       @url_generator = Util.new(base_path)
     end
 
+    # Realiza uma consulta de status da nota fiscal sefa.
     def consulta_nfe(chave_acesso)
       uf_id = @url_generator.get_uf_id get_uf_chave_acesso(chave_acesso)
 
@@ -25,7 +26,6 @@ module Nfe
 
       url = @url_generator.get_url_for uf_id, get_ambiente, :consulta_nfe
       xml = request url, template.render
-      puts xml.to_str
       ResponseConsultaNota.new(xml)
     end
 
@@ -48,7 +48,7 @@ module Nfe
         :ssl_client_key   =>  @key,
         :verify_ssl       =>  OpenSSL::SSL::VERIFY_NONE
       )
-      
+
       request.post(content, :content_type =>  'application/soap+xml;charset=UTF-8')
     end
 
