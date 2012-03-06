@@ -1,5 +1,5 @@
 require "test/unit"
-require_relative '../lib/nfe'
+require 'nfe'
 
 class TestWebservice < Test::Unit::TestCase
   ROOT_PATH = File.join(File.dirname(__FILE__), '..')
