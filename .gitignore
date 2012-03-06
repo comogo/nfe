@@ -1,4 +1,5 @@
 *.*~
+*.lock
 cert/
 teste_*
 email.yml

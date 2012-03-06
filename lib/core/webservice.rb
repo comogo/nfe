@@ -18,7 +18,7 @@ module Nfe
     def consulta_nfe(chave_acesso)
       uf_id = @url_generator.get_uf_id get_uf_chave_acesso(chave_acesso)
 
-      template = Template.new "messages/consulta_nfe.xml.erb" do |t|
+      template = Template.new "requests/consulta_nfe.xml.erb" do |t|
         t.add :uf_id, uf_id
         t.add :chave_acesso, chave_acesso
         t.add :ambiente, get_ambiente
@@ -30,7 +30,7 @@ module Nfe
     end
 
     def consulta_servico(uf)
-      template = Template.new "messages/consulta_servico.xml.erb" do |t|
+      template = Template.new "requests/consulta_servico.xml.erb" do |t|
         t.add :ambiente, get_ambiente
         t.add :uf_id, @url_generator.get_uf_id(uf)
       end
