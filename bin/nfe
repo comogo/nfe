@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
-if ARGV.length > 1
-  project = ProjectGenerator.new ARGV[1]
+require 'nfe'
+
+if ARGV.length == 1
+  project = ProjectGenerator.new ARGV[0]
   project.generate
 else
   puts "Informe o nome do projeto"

@@ -5,13 +5,13 @@ require 'rest_client'
 
 module Nfe
   class WebService
-    def initialize(producao=false, key_password='', base_path)
-      cert_path = File.join(base_path, "cert/cert.pem")
-      key_path= File.join(base_path, "cert/key.pem")
+    def initialize(producao=false, key_password='')
+      cert_path = "cert/cert.pem"
+      key_path= "cert/key.pem"
       generate_cert_key cert_path, key_path, key_password
       @key_password = key_password
       @producao = producao
-      @url_generator = Util.new(base_path)
+      @url_generator = Util.new
     end
 
     # Realiza uma consulta de status da nota fiscal sefa.

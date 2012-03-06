@@ -1,5 +1,6 @@
 *.*~
 *.lock
+*.gem
 cert/
 teste_*
 email.yml

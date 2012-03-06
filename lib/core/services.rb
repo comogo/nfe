@@ -4,9 +4,9 @@ module Nfe
   class Util
     @@urls = nil
     @@ufs = nil
-    def initialize(base_path)
-      url_file_path = File.join(base_path, 'conf/url.yml')
-      uf_file_path = File.join(base_path, 'conf/uf.yml')
+    def initialize
+      url_file_path = 'conf/url.yml'
+      uf_file_path = 'conf/uf.yml'
       @@urls = YAML.load_file(url_file_path) if @@urls.nil?
       @@ufs = YAML.load_file( uf_file_path) if @@ufs.nil?
     end

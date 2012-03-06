@@ -21,7 +21,7 @@ class ProjectGenerator
   end
 
   def make_project_folder
-    Dir.mkdir(@name) unless Dir.exists(@name)
+    Dir.mkdir(@name) unless Dir.exists?(@name)
   end
 
   def make_cert_folder
@@ -31,11 +31,11 @@ class ProjectGenerator
 
   def copy_conf_folder
     conf_path = File.join(@gem_path, 'configuration/conf')
-    FileUtils.cp_r conf_path @name
+    FileUtils.cp_r conf_path, @name
   end
 
   def copy_requests_folder
     conf_path = File.join(@gem_path, 'configuration/requests')
-    FileUtils.cp_r conf_path @name
+    FileUtils.cp_r conf_path, @name
   end
 end
