@@ -9,7 +9,7 @@ module Mail
     @@connection = nil
     @@params = nil
 
-    def self.run(mailbox, read_only)
+    def self.run(mailbox, read_only, &block)
       connection = get_connection
       if read_only
         method = 'examine'
@@ -17,18 +17,16 @@ module Mail
         method = 'select'
       end
       connection.send(method, mailbox)
-      yield connection
+      block.call connection
     end
 
     def self.get_connection
-      if @@connection
-        return @@connection
-      else
+      unless @@connection
         @@params = YAML.load_file('conf/email.yml') if @@params.nil?
         @@connection = Net::IMAP.new(@@params['address'])
         @@connection.login @@params['username'], @@params['password']
-        @@connection
       end
+      @@connection
     end
   end
 end
