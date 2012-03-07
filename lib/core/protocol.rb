@@ -29,7 +29,7 @@ module Nfe
       xml = "<retorno>"
       @@attr_mapping.each do |k,v|
         value = send k
-        xml += "<#{k}>" + value + "</#{k}>"
+        xml += "<#{k}>" + value + "</#{k}>" if value
       end
       xml += "</retorno>"
 
@@ -109,8 +109,7 @@ module Nfe
     end
 
     def to_str
-      xml = "<protocolo>"
-      xml += "<ambiente>" + @ambiente + "</ambiente>"
+      xml = "<ambiente>" + @ambiente + "</ambiente>"
       xml += "<versao>" + @versao + "</versao>"
       xml += "<chave_acesso>" + @chave_acesso + "</chave_acesso>"
       xml += "<data_recibo>" + @data_recibo + "</data_recibo>"
@@ -118,7 +117,6 @@ module Nfe
       xml += "<digito_validador>" + @digito_validador + "</digito_validador>"
       xml += "<status>" + @status + "</status>"
       xml += "<motivo>" + @motivo + "</motivo>"
-      xml += "</protocolo>"
 
       return xml
     end
