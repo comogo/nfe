@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'nfe'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2012-03-05'
   s.summary     = "Nota Fiscal Eletrônica"
   s.description = "Biblioteca para auxiliar na emissão NFe"
