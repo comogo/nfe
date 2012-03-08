@@ -5,13 +5,14 @@ require 'rest_client'
 
 module Nfe
   class WebService
-    def initialize(producao=false, key_password='', uf=:pr)
+    def initialize(producao=false, key_password='', uf=:pr, verbose=false)
       cert_path = "cert/cert.pem"
       key_path= "cert/key.pem"
       generate_cert_key cert_path, key_path, key_password
       @key_password = key_password
       @producao = producao
       @uf = uf
+      @verbose = verbose
       @url_generator = Util.new
     end
 
@@ -27,6 +28,9 @@ module Nfe
       end
 
       url = @url_generator.get_url_for uf_id, get_ambiente, :consulta_nfe
+      if @verbose
+        template.render
+      end
       xml = request url, template.render
       ResponseConsultaNota.new(xml)
     end
@@ -39,6 +43,9 @@ module Nfe
       end
 
       url = @url_generator.get_url_for uf, get_ambiente, :consulta_servico
+      if @verbose
+        template.render
+      end
       xml = request url, template.render
       ResponseStatusServico.new(xml)
     end
