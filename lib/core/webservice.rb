@@ -11,9 +11,9 @@ module Nfe
       generate_cert_key cert_path, key_path, key_password
       @key_password = key_password
       @producao = producao
-      @uf = uf
       @verbose = verbose
       @url_generator = Util.new
+      @uf = @url_generator.get_uf_id(uf)
     end
 
     # Realiza uma consulta de status da nota fiscal sefa.
