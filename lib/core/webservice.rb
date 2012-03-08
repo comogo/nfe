@@ -29,7 +29,7 @@ module Nfe
 
       url = @url_generator.get_url_for uf_id, get_ambiente, :consulta_nfe
       if @verbose
-        template.render
+        puts template.render
       end
       xml = request url, template.render
       ResponseConsultaNota.new(xml)
@@ -44,7 +44,7 @@ module Nfe
 
       url = @url_generator.get_url_for uf, get_ambiente, :consulta_servico
       if @verbose
-        template.render
+        puts template.render
       end
       xml = request url, template.render
       ResponseStatusServico.new(xml)
