@@ -20,7 +20,19 @@ module Nfe
         yield self
       end
 
-      @template.result(binding)
+      template = @template.result(binding)
+      compress(template)
+    end
+
+    private
+
+    def compress(template)
+      rendered = ""
+      template.split("\n").each do |t|
+        rendered += t.strip
+      end
+
+      return rendered
     end
   end
 end

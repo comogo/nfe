@@ -28,9 +28,6 @@ module Nfe
       end
 
       url = @url_generator.get_url_for uf_id, get_ambiente, :consulta_nfe
-      if @verbose
-        puts template.render
-      end
       xml = request url, template.render
       ResponseConsultaNota.new(xml)
     end
@@ -43,9 +40,6 @@ module Nfe
       end
 
       url = @url_generator.get_url_for uf, get_ambiente, :consulta_servico
-      if @verbose
-        puts template.render
-      end
       xml = request url, template.render
       ResponseStatusServico.new(xml)
     end
@@ -58,7 +52,10 @@ module Nfe
         :ssl_client_key   =>  @key,
         :verify_ssl       =>  OpenSSL::SSL::VERIFY_NONE
       )
-
+      if @verbose
+        puts url
+        puts content
+      end
       request.post(content, :content_type =>  'application/soap+xml;charset=UTF-8')
     end
 
