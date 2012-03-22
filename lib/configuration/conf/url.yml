@@ -1,3 +1,122 @@
+ac:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+al:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+am:
+  producao:
+    consulta_nfe: https://nfe.sefaz.am.gov.br/services2/services/NfeConsulta2
+    consulta_servico: https://nfe.sefaz.am.gov.br/services2/services/NfeStatusServico2
+  homologacao:
+    consulta_nfe: https://homnfe.sefaz.am.gov.br/services2/services/NfeConsulta2
+    consulta_servico: https://homnfe.sefaz.am.gov.br/services2/services/NfeStatusServico2
+ap:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+ba:
+  producao:
+    consulta_nfe: https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefaz.ba.gov.br/webservices/nfenw/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeConsulta2.asmx
+    consulta_servico: https://hnfe.sefaz.ba.gov.br/webservices/nfenw/NfeStatusServico2.asmx
+ce:
+  producao:
+    consulta_nfe: https://nfe.sefaz.ce.gov.br/nfe2/services/NfeConsulta2
+    consulta_servico: https://nfe.sefaz.ce.gov.br/nfe2/services/NfeStatusServico2
+  homologacao:
+    consulta_nfe: https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeConsulta2
+    consulta_servico: https://nfeh.sefaz.ce.gov.br/nfe2/services/NfeStatusServico2
+df:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+es:
+  producao:
+    consulta_nfe: https://www.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://www.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://hom.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://hom.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+go:
+  producao:
+    consulta_nfe: https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeConsulta2?wsdl
+    consulta_servico: https://nfe.sefaz.go.gov.br/nfe/services/v2/NfeStatusServico2?wsdl
+  homologacao:
+    consulta_nfe: https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeConsulta2?wsdl
+    consulta_servico: https://homolog.sefaz.go.gov.br/nfe/services/v2/NfeStatusServico2?wsdl
+ma:
+  producao:
+    consulta_nfe: https://www.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://www.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://hom.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://hom.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+mg:
+  producao:
+    consulta_nfe: https://nfe.fazenda.mg.gov.br/nfe2/services/NfeConsulta2
+    consulta_servico: https://nfe.fazenda.mg.gov.br/nfe2/services/NfeStatus2
+  homologacao:
+    consulta_nfe: https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeConsulta2
+    consulta_servico: https://hnfe.fazenda.mg.gov.br/nfe2/services/NfeStatusServico2
+ms:
+  producao:
+    consulta_nfe: https://nfe.fazenda.ms.gov.br/nfe2/services/NfeConsulta2
+    consulta_servico: https://nfe.fazenda.ms.gov.br/nfe2/services/NfeStatus2
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeConsulta2
+    consulta_servico: https://homologacao.nfe.ms.gov.br/homologacao/services2/NfeStatusServico2
+mt:
+  producao:
+    consulta_nfe: https://nfe.fazenda.mg.gov.br/nfe2/services/NfeConsulta2
+    consulta_servico: https://nfe.fazenda.mg.gov.br/nfe2/services/NfeStatus2
+  homologacao:
+    consulta_nfe: https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeConsulta2?wsdl
+    consulta_servico: https://homologacao.sefaz.mt.gov.br/nfews/v2/services/NfeStatusServico2?wsdl
+pa:
+  producao:
+    consulta_nfe: https://www.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://www.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://hom.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://hom.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+pb:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+pe:
+  producao:
+    consulta_nfe: https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeConsulta2
+    consulta_servico: https://nfe.sefaz.pe.gov.br/nfe-service/services/NfeStatusServico2
+  homologacao:
+    consulta_nfe: https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeConsulta2
+    consulta_servico: https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NfeStatusServico2
+pi:
+  producao:
+    consulta_nfe: https://www.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://www.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://hom.sefazvirtual.fazenda.gov.br/NfeConsulta2/NfeConsulta2.asmx
+    consulta_servico: https://hom.sefazvirtual.fazenda.gov.br/NfeStatusServico2/NfeStatusServico2.asmx
 pr:
   producao:
     consulta_nfe: https://nfe2.fazenda.pr.gov.br/nfe/NFeConsulta2
@@ -5,3 +124,59 @@ pr:
   homologacao:
     consulta_nfe: https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeConsulta2
     consulta_servico: https://homologacao.nfe2.fazenda.pr.gov.br/nfe/NFeStatusServico2
+rj:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+ro:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+rr:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+rs:
+  producao:
+    consulta_nfe: https://nfe.sefaz.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefaz.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefaz.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefaz.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+sc:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+se:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+sp:
+  producao:
+    consulta_nfe: https://nfe.fazenda.sp.gov.br/nfeweb/services/nfeconsulta2.asmx
+    consulta_servico: https://nfe.fazenda.sp.gov.br/nfeweb/services/nfestatusservico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/NfeStatusServico2.asmx
+to:
+  producao:
+    consulta_nfe: https://nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx
+  homologacao:
+    consulta_nfe: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx
+    consulta_servico: https://homologacao.nfe.sefazvirtual.rs.gov.br/ws/NfeStatusServico/NfeStatusServico2.asmx

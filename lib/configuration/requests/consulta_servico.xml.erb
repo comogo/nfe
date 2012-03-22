@@ -2,17 +2,17 @@
 <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
   <soap12:Header>
     <nfeCabecMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2">
+      <cUF><%= @uf_id %></cUF>
       <versaoDados>2.00</versaoDados>
-      <cUF><%= @uf_id_certificado %></cUF>
     </nfeCabecMsg>
   </soap12:Header>
   <soap12:Body>
-    <nfeDadosMsg xmlns="http://www.portalfiscal.inf.br/nfe">
-      <consStatServ versao="2.00">
+    <nfeDadosMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/NfeStatusServico2">
+      <consSitNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="2.00">
         <tpAmb><%= @ambiente %></tpAmb>
-        <cUF><%= @uf_id %></cUF>
         <xServ>STATUS</xServ>
-      </consStatServ>
+        <cUF><%= @uf_id %></cUF>
+      </consSitNFe>
     </nfeDadosMsg>
   </soap12:Body>
 </soap12:Envelope>

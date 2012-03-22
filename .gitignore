@@ -3,5 +3,6 @@
 *.gem
 cert/
 teste_*
+teste.rb
 email.yml
 2012_*/
