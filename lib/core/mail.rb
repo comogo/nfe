@@ -5,7 +5,7 @@ module Mail
   class NfeMailer
     def initialize(params)
       @folder = folder(params[:folder]) || :inbox
-      @read_only = params[:read_only] || true
+      @read_only = case params[:read_only] when false then false else true end
     end
 
     def get_emails(params)
@@ -21,9 +21,10 @@ module Mail
           email.raw_body = raw_body
           email.raw_envelope = raw_envelope
 
+          atts = []
+
           if email.is_multipart?
             atta_id = 1
-            atts = []
             while email.body.parts[atta_id] != nil
               att = Attachment.new(@folder, email_id, atta_id, email.body.parts[atta_id])
 
@@ -35,7 +36,7 @@ module Mail
             email.attachments = atts
           end
 
-          if email.body
+          if email.body and email.is_multipart?
             emails << email
           end
         end
@@ -79,7 +80,7 @@ module Mail
       unless File.directory?(path)
         Dir.mkdir(path)
       end
-      File.write(File.join(path, name), body, mode: 'w')
+      File.write(File.join(path, name), body_unpacked, mode: 'w')
     end
 
     def body_unpacked

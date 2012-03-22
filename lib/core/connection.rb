@@ -22,7 +22,7 @@ module Mail
 
     def self.get_connection
       unless @@connection
-        @@params = YAML.load_file('conf/email.yml') if @@params.nil?
+        @@params = YAML.load_file('./conf/email.yml') if @@params.nil?
         @@connection = Net::IMAP.new(@@params['address'])
         @@connection.login @@params['username'], @@params['password']
       end
@@ -30,3 +30,8 @@ module Mail
     end
   end
 end
+
+
+
+
+
