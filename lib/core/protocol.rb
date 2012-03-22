@@ -64,7 +64,8 @@ module Nfe
 
     # Retorna apenas os dados referentes aos dados do Body.
     def get_dados_xml(xml)
-      xml.css("env|Body")[0].children()[0].children()[0].children()
+      xml.remove_namespaces!
+      xml.css("Body")[0].children()[0].children()[0].children()
     end
 
     # Cria uma instância da classe Protocolo conforme os dados recebidos no XML.
